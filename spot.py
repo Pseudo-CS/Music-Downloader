@@ -34,6 +34,4 @@ def get():
     print('No.of tracks to be downloaded : '+str(len(tracks)))
     return tracks
 
-
-
-# https://open.spotify.com/playlist/4QN5189SFznNV6ueb9sC67?si=5cf9063d0f374253
+# help
