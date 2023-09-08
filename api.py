@@ -59,7 +59,7 @@ def connect(vid, heads):
 
 
 
-def ajax(values):
+def ajax(values): #request for retreiving download url
     print('executing ajax request ... ')
     try:
         r = requests.post('https://ytmp3cut.com/ajax', headers=headers, data=values)
@@ -72,7 +72,7 @@ def ajax(values):
 
 
 
-def download(r):
+def download(r): #opens download stream and returns file
     try:
         d = requests.get(r.json().get('mp3url'), stream=True)
     except:
@@ -100,7 +100,7 @@ def download(r):
 
 
 
-def token(id):
+def token(id): #returns download token
     # heads['content-length'] = '66'
     reqValues['token'] = connect(id, headers)
     token = ajax(reqValues).json().get('audio')
@@ -119,7 +119,7 @@ def execute(sec):
             print('Artist: ' + tist.get('name'))
 
         print('-------------------')
-        downloadValues['token'] = token(cat.get('videoId'))
+        downloadValues['token'] = token(cat.get('videoId')) #setting the token for accessing download servers 
         download(ajax(downloadValues))
         break
 
