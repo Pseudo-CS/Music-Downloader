@@ -22,7 +22,8 @@ def get():
     headin = {'Authorization': 'Bearer ' + r.json().get('access_token')}
 
     try:
-        d = requests.get('https://api.spotify.com/v1/playlists/7kbAloN1ujbSFdb19XWHag', headers=headin)
+    #https://open.spotify.com/playlist/2cDP3RIGnfGzWG223OB26r?si=29bae1f9c7c44514
+        d = requests.get('https://api.spotify.com/v1/playlists/2cDP3RIGnfGzWG223OB26r', headers=headin)
     except:
         print(d.status_code, d.reason)
     
