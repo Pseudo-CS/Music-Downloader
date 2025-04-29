@@ -1,8 +1,8 @@
 import base64
 import requests
 
-client_id = 'eda12a570bbc45acb1838434b482f684'
-client_secret = '0cb0b76eb9594ebcac2f507f01b139d9'
+client_id = ''
+client_secret = ''
 final = client_id + ':' + client_secret
 final = str(base64.b64encode(bytes(final, 'utf-8'))).strip('b\'').strip('\'')
 
